@@ -11,9 +11,15 @@ export function InputComponent(props) {
     setValue(title);
   }, [title]);
 
+  const onChangeHandler = (event) => {
+    const newValue = event.target.value;
+    manager.updateTitle(newValue);
+  };
+
   return (
     <input
       value={value}
+      onChange={onChangeHandler}
     />
   );
 }
