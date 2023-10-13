@@ -1,12 +1,14 @@
+import { Publisher } from "./publisher";
+
 export class Manager {
 
     #title;
 
     constructor() {
-        this.#title = 'hey what up';
+        this.#title = new Publisher('hey what up');
     }
 
     get title() {
-        return this.#title;
+        return this.#title.value;
     }
 }
