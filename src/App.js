@@ -8,9 +8,8 @@ function App() {
   return (
     <ManagerContextProvider>
       <InputComponent />
-      <BoxComponent />
-      <BoxComponent />
-      <BoxComponent />
+      <InputComponent />
+      <InputComponent />
     </ ManagerContextProvider>
   );
 }
