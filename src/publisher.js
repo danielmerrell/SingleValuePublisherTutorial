@@ -1,30 +1,30 @@
 export class Publisher {
 
-    #value;
-    #subscribers;
+  #value;
+  #subscribers;
 
-    constructor(initialValue) {
-      this.#value = initialValue;
-      this.#subscribers = [];
-    }
+  constructor(initialValue) {
+    this.#value = initialValue;
+    this.#subscribers = [];
+  }
 
-    get value() {
-      return this.#value;
-    }
+  get value() {
+    return this.#value;
+  }
 
-    updateValue(newValue) {
-      const oldValue = this.#value
-      this.#value = newValue;
+  updateValue(newValue) {
+    const oldValue = this.#value
+    this.#value = newValue;
 
-      this.#subscribers.forEach((sub) => {
-        sub({
-            oldValue,
-            newValue,
-        });
-      })
-    }
+    this.#subscribers.forEach((sub) => {
+      sub({
+        oldValue,
+        newValue,
+      });
+    })
+  }
 
-    addSubscription(subscriber) {
-      this.#subscribers.push(subscriber);
-    }
+  addSubscription(subscriber) {
+    this.#subscribers.push(subscriber);
+  }
 }
