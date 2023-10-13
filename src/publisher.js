@@ -4,12 +4,12 @@ export class Publisher {
     #subscribers;
 
     constructor(initialValue) {
-        this.#value = initialValue;
-        this.#subscribers = [];
+      this.#value = initialValue;
+      this.#subscribers = [];
     }
 
     get value() {
-        return this.#value;
+      return this.#value;
     }
 
     updateValue(newValue) {
