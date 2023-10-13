@@ -5,7 +5,7 @@ export class Publisher {
 
   constructor(initialValue) {
     this.#value = initialValue;
-    this.#subscribers = [];
+    this.#subscribers = new Set();
   }
 
   get value() {
@@ -25,6 +25,6 @@ export class Publisher {
   }
 
   addSubscription(subscriber) {
-    this.#subscribers.push(subscriber);
+    this.#subscribers.add(subscriber);
   }
 }
