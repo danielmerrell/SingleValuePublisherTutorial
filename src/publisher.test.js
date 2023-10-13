@@ -15,4 +15,16 @@ describe('Publisher', () => {
 
         expect(publisher.value).toEqual('3');
     });
+
+    it('publishes changes to subscribers', () => {
+        const subscriber = jest.fn();
+        const publisher = new Publisher('1');
+        publisher.addSubscription(subscriber);
+        publisher.updateValue('3');
+
+        expect(subscriber).toHaveBeenCalledWith({
+            oldValue: '1',
+            newValue: '3',
+        });
+    })
 });
