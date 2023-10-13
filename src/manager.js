@@ -4,8 +4,8 @@ export class Manager {
 
   #title;
 
-  constructor() {
-    this.#title = new Publisher('hey what up');
+  constructor({ title }) {
+    this.#title = new Publisher(title);
   }
 
   get title() {
