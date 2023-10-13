@@ -9,4 +9,8 @@ export class Publisher {
     get value() {
         return this.#value;
     }
+
+    updateValue(newValue) {
+        this.#value = newValue;
+    }
 }
