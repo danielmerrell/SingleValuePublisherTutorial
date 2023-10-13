@@ -19,4 +19,20 @@ describe('usePublishedValue', () => {
 
     expect(result.current).toEqual('y');
   });
+
+  it('updates the value when there is a new publisher', () => {
+    const publisher1 = new Publisher('x');
+    const publisher2 = new Publisher('y');
+
+    const { result, rerender } = renderHook(
+      ({ publisher }) => usePublishedValue(publisher),
+      { initialProps: { publisher: publisher1 } },
+    );
+
+    expect(result.current).toEqual('x');
+
+    rerender({ publisher: publisher2 });
+
+    expect(result.current).toEqual('y');
+  });
 });

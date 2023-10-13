@@ -9,9 +9,10 @@ export function usePublishedValue(publisher) {
   }
 
   React.useEffect(() => {
+    setValue(publisher.value);
     publisher.addSubscription(updateValueCallback);
     // return () => publisher.removeSubscription();
-  }, []);
+  }, [publisher]);
 
   return value;
 }
