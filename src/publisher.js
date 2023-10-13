@@ -27,4 +27,8 @@ export class Publisher {
   addSubscription(subscriber) {
     this.#subscribers.add(subscriber);
   }
+
+  removeSubscription(subscriber) {
+    this.#subscribers.delete(subscriber);
+  }
 }

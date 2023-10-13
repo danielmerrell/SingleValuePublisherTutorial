@@ -27,4 +27,16 @@ describe('Publisher', () => {
       newValue: '3',
     });
   })
+
+  it('removes subscriptions', () => {
+    const subscriber = jest.fn();
+    const publisher = new Publisher('1');
+    publisher.addSubscription(subscriber);
+    publisher.updateValue('3');
+
+    publisher.removeSubscription(subscriber);
+    publisher.updateValue('4');
+
+    expect(subscriber).toHaveBeenCalledTimes(1);
+  });
 });
