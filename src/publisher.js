@@ -31,4 +31,8 @@ export class Publisher {
   removeSubscription(subscriber) {
     this.#subscribers.delete(subscriber);
   }
+
+  get subscribersCount() {
+    return this.#subscribers.size;
+  }
 }

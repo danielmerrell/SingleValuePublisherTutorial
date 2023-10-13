@@ -35,4 +35,15 @@ describe('usePublishedValue', () => {
 
     expect(result.current).toEqual('y');
   });
+
+  it('removes the subscription when the component is unmounted', () => {
+    const publisher = new Publisher('x');
+
+    const { unmount } = renderHook(() => usePublishedValue(publisher));
+    expect(publisher.subscribersCount).toEqual(1);
+
+    unmount();
+
+    expect(publisher.subscribersCount).toEqual(0);
+  });
 });

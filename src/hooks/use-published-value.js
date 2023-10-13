@@ -1,6 +1,5 @@
 import React from "react";
 
-// TODO clean up the subscription
 export function usePublishedValue(publisher) {
   const [value, setValue] = React.useState(publisher.value);
   const updateValueCallback = (publishedValue) => {
@@ -11,7 +10,7 @@ export function usePublishedValue(publisher) {
   React.useEffect(() => {
     setValue(publisher.value);
     publisher.addSubscription(updateValueCallback);
-    // return () => publisher.removeSubscription();
+    return () =>  publisher.removeSubscription(updateValueCallback);
   }, [publisher]);
 
   return value;
