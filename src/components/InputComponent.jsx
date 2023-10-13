@@ -1,18 +1,14 @@
-import { useState } from "react";
 import React from 'react';
 import { ManagerContext } from "../manager-context";
+import { usePublishedValue } from "../hooks/use-published-value";
 
 export function InputComponent(props) {
   const { manager } = React.useContext(ManagerContext)
-  const [value, setValue] = useState(manager.title);
-  const onChange = (event) => {
-    setValue(event.target.value);
-  }
+  const title = usePublishedValue(manager.titlePublisher);
 
   return (
     <input
-      value={value}
-      onChange={onChange}
+      value={title}
     />
   );
 }
