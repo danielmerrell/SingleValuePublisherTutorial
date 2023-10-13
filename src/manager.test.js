@@ -2,6 +2,12 @@ import { Manager } from "./manager";
 
 describe('Manager', () => {
   describe('title', () => {
+    it('has a default empty title', () => {
+      const manager = new Manager();
+
+      expect(manager.title).toEqual('');
+    });
+
     it('has a title', () => {
       const manager = new Manager({ title: "I'm mr manager" });
 
