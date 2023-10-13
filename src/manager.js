@@ -11,4 +11,8 @@ export class Manager {
   get title() {
     return this.#title.value;
   }
+
+  get titlePublisher() {
+    return this.#title;
+  }
 }
