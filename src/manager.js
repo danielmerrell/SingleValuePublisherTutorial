@@ -15,4 +15,8 @@ export class Manager {
   get titlePublisher() {
     return this.#title;
   }
+
+  updateTitle(newTitle) {
+    this.#title.updateValue(newTitle);
+  }
 }
