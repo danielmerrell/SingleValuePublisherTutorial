@@ -1,4 +1,5 @@
 import './App.css';
+import { DisplayComponent } from './components/DisplayComponent';
 import { InputComponent } from './components/InputComponent';
 import { ManagerContextProvider } from './manager-context';
 
@@ -8,6 +9,7 @@ function App() {
       <InputComponent />
       <InputComponent />
       <InputComponent />
+      <DisplayComponent />
     </ ManagerContextProvider>
   );
 }
